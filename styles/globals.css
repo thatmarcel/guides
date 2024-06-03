@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markdown-view code {
+    @apply bg-neutral-100;
+    @apply py-[1px];
+    @apply px-1;
+    @apply text-sm;
+    @apply rounded;
+}
+
+.markdown-view p {
+    @apply my-2
+}
+
+.markdown-view ul {
+    @apply list-disc;
+    @apply list-outside;
+    @apply ml-8;
+}
+
+.markdown-view a {
+    @apply underline;
+    @apply underline-offset-2;
+    @apply decoration-[1px]
+}
+
+.dark .markdown-view code {
+    background-color: rgb(60 60 60);
+}
+
+@media (prefers-color-scheme: dark) {
+    .markdown-view code {
+        background-color: rgb(60 60 60) !important;
+    }
+}

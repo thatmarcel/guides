@@ -1,0 +1,86 @@
+{
+    "slug": "in-echtzeit-daten-zwischen-touch-designer-und-unreal-engine-schicken",
+    "title": "In Echtzeit Daten zwischen Touch Designer und Unreal Engine schicken",
+    "description": "Lerne, wie man die beiden Programme so konfiguriert, dass man so viele Zahlenwerte zwischen ihnen schicken kann wie man will.",
+    "steps": [
+        {
+            "title": "Installieren des TouchDesigner Plugins",
+            "description": "Verschiebe oder extrahiere die heruntergeladene Plugindatei in den TouchDesigner Plugins Ordner.\n\nDie Standard-Pfade für macOS und Windows sind aktuell folgende (eventuell muss der `Plugins` Ordner manuell erstellt werden):\n- **Windows**: `C:\\Users\\<your username>\\Documents\\Derivative\\Plugins\\`\n- **macOS**: `/Users/<your username>/Library/Application Support/Derivative/TouchDesigner099/Plugins`\n\nAuf Windows muss die heruntergeladene Datei zusätzlich gerechtsklickt werden. Dann muss in den Eigenschaften unten die `Unblock` Checkbox aktiviert und die Änderungen angewendet werden.",
+            "coverImageUrl": null,
+            "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/28cb6d81-f40e-4f9e-9755-b9e7e568a7cd?autoplay=true",
+            "buttons": [
+                {
+                    "title": "Lade die Plugindatei herunter",
+                    "href": "https://github.com/thatmarcel/touchdesigner-plugins/releases/tag/unreal-engine-connection-build-1"
+                }
+            ],
+            "troubleshootingSections": []
+        },
+        {
+            "title": "Vorbereiten des TouchDesigner Projekts",
+            "description": "Öffne oder erstelle ein TouchDesigner Projekt und platziere ein `Unreal Engine Connection` CHOP aus dem `Custom` Tab im **OP Create Dialog**.",
+            "coverImageUrl": null,
+            "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/7bf3e915-c999-4eac-8c6f-0a71abe300c5",
+            "buttons": [],
+            "troubleshootingSections": []
+        },
+        {
+            "title": "Erstellen eines Unreal Engine C++ Projekts",
+            "description": "Öffne oder erstelle ein Projekt in Unreal Engine (getestet mit UE 5.4.1 aber andere Versionen funktionieren vielleicht auch).\n\nErstelle danach eine neue C++ Klasse über das `Tools` Menü, um ein C++ Projekt zu erstellen, falls noch keins existiert.",
+            "coverImageUrl": null,
+            "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/80d54524-4562-4fb7-8e5e-4b027bd9b862",
+            "buttons": [],
+            "troubleshootingSections": []
+        },
+        {
+            "title": "Rider installieren (empfohlen)",
+            "description": "In diesem Guide wird Jetbrains Rider als Code-Editor verwendet, um exakt den Schritten zu folgen empfiehlt es sich also, Rider zu installieren. Falls du weißt, was du tust und Visual Studio verwenden willst, kannst du diesen Schritt überspringen.",
+            "coverImageUrl": null,
+            "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/07405ff1-47a9-4046-94ae-d111f2ed77c4",
+            "buttons": [
+                {
+                    "title": "Rider herunterladen",
+                    "href": "https://www.jetbrains.com/rider/"
+                }
+            ],
+            "troubleshootingSections": []
+        },
+        {
+            "title": "Hinzufügen der Unreal Engine Codedateien und kompilieren des C++ Projekts",
+            "description": "Kopiere den `TouchDesignerConnection` Ordner aus dem heruntergeladenen Archiv in den `<UE Projekt Ordner>/Source/<UE Projekt Name>` Ordner (die Dateien `<UE Projekt Name>.cpp` und `<UE Projekt Name>.Build.cs` sollten sich auch darin befinden).\n\nIn `<UE Projekt Name>.Build.cs` müssen `\"Networking\"` und `\"Sockets\"` zur Liste `PublicDependencyModuleNames` hinzugefügt werden.\n\nÖffne danach `<UE Projekt Ordner>/Source/<UE Projekt Name>/Public/<vorher erstellte Klasse>.h` und kopiere `<whatever>_API` nach dem `class` Keyword (vermutlich in Zeile 10).\n\nAls nächstes öffne `<UE Projekt Ordner>/Source/<UE Projekt Name>/TouchDesignerConnection/TouchDesignerConnectionActor.h` und ersetze `BLANKTEST1_API` mit dem Kopierten.\n\nUm das Projekt zu kompilieren, klicke auf den Button mit einem Hammer und einem Blatt in der oberen Leiste in Rider.",
+            "coverImageUrl": null,
+            "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/46cda3c9-d4c7-4496-aefb-2ec6015b598a",
+            "buttons": [
+                {
+                    "title": "Lade das Codedateien-Archiv herunter",
+                    "href": "https://github.com/thatmarcel/unreal-engine-touch-designer-connection/archive/refs/heads/main.zip"
+                }
+            ],
+            "troubleshootingSections": []
+        },
+        {
+            "title": "Platzieren des Actors im Unreal Engine Level",
+            "description": "Suche den `TouchDesignerConnectionActor` im `C++ Classes/<UE Projekt Name>/TouchDesignerConnection` Ordner im Unreal Engine **Content Browser** und ziehe ihn in den Level View, um ihn in der Welt zu platzieren.\n\nFühre danach das Unreal Projekt aus, indem du auf den grünen Play-Button klickst.",
+            "coverImageUrl": null,
+            "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/29e71a43-5e6b-4bf0-aa65-4eefee9533d1",
+            "buttons": [],
+            "troubleshootingSections": []
+        },
+        {
+            "title": "Werte von Unreal Engine zu Touch Designer schicken",
+            "description": "Füge Einträge zu den `Sent Values` auf dem `TouchDesignerConnectionActor` manuell oder bspw. via Blueprints hinzu.\n\nDer `Unreal Engine Connection` CHOP wird diese Werte in TouchDesigner ausgeben.",
+            "coverImageUrl": null,
+            "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/ba083d96-dabf-4cd7-b38e-3688de172a87",
+            "buttons": [],
+            "troubleshootingSections": []
+        },
+        {
+            "title": "Werte von Touch Designer zu Unreal Engine schicken",
+            "description": "Verbinde ein CHOP mit einem oder mehr Kanälen mit dem Input des `Unreal Engine Connection` CHOP.\n\nDie Werte erscheinen jetzt unter `Received Values` auf der `TouchDesignerConnectionActor` Instanz. Du kannst bspw. durch Blueprints auf diese zugreifen.",
+            "coverImageUrl": null,
+            "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/84fd3b63-733a-4d93-bad9-0602ba4ead9d",
+            "buttons": [],
+            "troubleshootingSections": []
+        }
+    ]
+}
