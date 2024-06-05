@@ -25,6 +25,14 @@
             "troubleshootingSections": []
         },
         {
+            "title": "Installing VS Build Tools",
+            "description": "If you're on Windows, you'll need to install Visual Studio Build Tools to build or run your Unreal Engine project. You'll need these even if you don't plan on using Visual Studio as your code editor (in this guide, we'll use Rider).\n\nAfter starting the Setup, select and install \"Desktop development with C++\".\n\nIf you already have Visual Studio installed, these tools might be installed already.",
+            "coverImageUrl": null,
+            "coverVideoUrl": null,
+            "buttons": [],
+            "troubleshootingSections": []
+        },
+        {
             "title": "Creating an Unreal Engine C++ project",
             "description": "Open or create a project in Unreal Engine (tested with UE 5.4.1 but other versions may work as well).\n\nThen, create a new C++ class via the `Tools` menu to create a C++ project if you don't have one already.",
             "coverImageUrl": null,
@@ -34,7 +42,7 @@
         },
         {
             "title": "Installing Rider (recommended)",
-            "description": "This tutorial uses Jetbrains Rider as the code editor so if you want to follow along exactly, install Rider. If you know what you're doing and want to use Visual Studio, you can skip this step.\n\nAfter installing Rider, go to `Edit` > `Editor Preferences` in Unreal Engine, search for `code editor` and set `Rider Uproject` as the default.\n\nAfter restarting Unreal Engine, you can now open the project in Rider via the `Tools` menu.",
+            "description": "This tutorial uses Jetbrains Rider as the code editor so if you want to follow along exactly, install Rider. If you know what you're doing and want to use Visual Studio, you can skip this step.\n\nAfter installing Rider, go to `Edit` > `Editor Preferences` in Unreal Engine, search for `code editor` and set `Rider Uproject` as the default.\n\nAfter restarting Unreal Engine, you can now open the project in Rider via the `Tools` menu.\n\nAfter processing the project files, Rider should ask you whether you want to install the `UnrealLink` or `RiderLink` plugin (if not, check the notifications tab on the right). Select the option to install it in the engine. After that's done, restart both programs.",
             "coverImageUrl": null,
             "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/07405ff1-47a9-4046-94ae-d111f2ed77c4",
             "buttons": [

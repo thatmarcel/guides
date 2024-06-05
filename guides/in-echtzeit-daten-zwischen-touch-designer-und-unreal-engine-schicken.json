@@ -25,6 +25,14 @@
             "troubleshootingSections": []
         },
         {
+            "title": "Installieren der VS Build Tools",
+            "description": "Auf Windows werden die Visual Studio Build Tools benötigt, um das Unreal Engine Projekt auszuführen, selbst wenn Visual Studio nicht als Code-Editor verwendet wird (in diesem Guide wird Rider verwendet).\n\nNach dem Starten des Setups, wähle und installiere \"Desktop development with C++\".\n\nFalls du bereits Visual Studio installiert hast, sind diese Tools möglicherweise auch bereits installiert.",
+            "coverImageUrl": null,
+            "coverVideoUrl": null,
+            "buttons": [],
+            "troubleshootingSections": []
+        },
+        {
             "title": "Erstellen eines Unreal Engine C++ Projekts",
             "description": "Öffne oder erstelle ein Projekt in Unreal Engine (getestet mit UE 5.4.1 aber andere Versionen funktionieren vielleicht auch).\n\nErstelle danach eine neue C++ Klasse über das `Tools` Menü, um ein C++ Projekt zu erstellen, falls noch keins existiert.",
             "coverImageUrl": null,
@@ -34,7 +42,7 @@
         },
         {
             "title": "Rider installieren (empfohlen)",
-            "description": "In diesem Guide wird Jetbrains Rider als Code-Editor verwendet, um exakt den Schritten zu folgen empfiehlt es sich also, Rider zu installieren. Falls du weißt, was du tust und Visual Studio verwenden willst, kannst du diesen Schritt überspringen.",
+            "description": "In diesem Guide wird Jetbrains Rider als Code-Editor verwendet, um exakt den Schritten zu folgen empfiehlt es sich also, Rider zu installieren. Falls du weißt, was du tust und Visual Studio verwenden willst, kannst du diesen Schritt überspringen.\n\nSobald Rider installiert ist, gehe in Unreal Engine zu `Edit` > `Editor Preferences`, suche nach `code editor` und setze die Einstellung auf `Rider Uproject`.\n\nNachdem Rider das Projekt geladen hat, sollte es fragen, ob du das `UnrealLink` oder `RiderLink` Plugin installieren willst (wenn nicht, schaue im Notifications-Tab rechts nach). Wähle die Option, das Plugin in der Engine zu installieren und starte beide Programme neu.",
             "coverImageUrl": null,
             "coverVideoUrl": "https://iframe.mediadelivery.net/embed/248890/07405ff1-47a9-4046-94ae-d111f2ed77c4",
             "buttons": [
