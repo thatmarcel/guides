@@ -45,6 +45,7 @@ export default async function DashboardPage() {
                             mb-4
                             shadow
                             shadow-neutral-50
+                            dark:shadow-transparent
                         "
                     >
                         <Link href={`/dash/edit/${guideData.id}`}>
@@ -55,7 +56,9 @@ export default async function DashboardPage() {
                                 py-3
                                 border-2
                                 border-neutral-200
+                                dark:border-neutral-700
                                 hover:bg-neutral-50
+                                dark:hover:bg-neutral-950
                                 duration-300
                                 w-full
                                 text-left
@@ -83,6 +86,7 @@ export default async function DashboardPage() {
                                     border-b-2
                                     border-r-2
                                     border-neutral-200
+                                    dark:border-neutral-700
                                     -mt-3
                                     rounded-b-xl
                                     px-6
@@ -91,6 +95,10 @@ export default async function DashboardPage() {
                                     w-full
                                     text-left
                                     bg-neutral-100
+                                    dark:bg-neutral-800
+                                    hover:bg-neutral-50
+                                    dark:hover:bg-neutral-700
+                                    duration-300
                                     z-0
                                     flex
                                     items-center
