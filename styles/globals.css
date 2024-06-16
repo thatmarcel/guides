@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    font-family: "Public Sans Variable", sans-serif;
+}
+
 .markdown-view code, .editor code {
     @apply bg-neutral-100;
     @apply py-[1px];

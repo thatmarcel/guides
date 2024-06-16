@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import "@fontsource-variable/public-sans";
+
 import "../styles/globals.css";
 import {getLocale} from "next-intl/server";
 import {Metadata, ResolvingMetadata} from "next";

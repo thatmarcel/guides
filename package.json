@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/nextjs": "^5.1.5",
     "@clerk/themes": "^2.1.9",
+    "@fontsource-variable/public-sans": "^5.0.19",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@milkdown/core": "^7.3.6",
     "@milkdown/ctx": "^7.3.6",

@@ -79,7 +79,7 @@ export default async function DashboardPage() {
                             </button>
                         </Link>
 
-                        <Link href={`/g/${guideData.slug}`}>
+                        <Link href={`/g/${guideData.slug}`} target="_blank">
                             <button
                                 className="
                                     border-l-2
