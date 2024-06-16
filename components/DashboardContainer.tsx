@@ -1,6 +1,7 @@
 import {ReactNode} from "react";
 import MiscButton from "./MiscButton";
 import BackIcon from "../icons/BackIcon";
+import DashboardBottomBar from "./DashboardBottomBar";
 
 export default function DashboardContainer({
     children,
@@ -14,7 +15,7 @@ export default function DashboardContainer({
     shouldHaveBackButton: boolean
 }) {
     return (
-        <div className="w-screen h-full flex px-8 py-6 md:pt-20 pb-16">
+        <div className="w-screen h-full flex px-8 py-6 md:pt-20 pb-20">
             <div className={`mx-auto max-w-[1000px] w-full ${shouldHaveBackButton ? "md:-mt-9" : ""}`}>
                 {shouldHaveBackButton
                     ? <a href="/dash">
@@ -37,6 +38,8 @@ export default function DashboardContainer({
                 </div>
 
                 {children}
+
+                <DashboardBottomBar />
             </div>
         </div>
     )
