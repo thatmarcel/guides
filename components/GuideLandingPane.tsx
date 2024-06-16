@@ -12,7 +12,7 @@ export default function GuideLandingPane({
 }) {
     return (
         <div className="w-full h-full flex md:items-center p-12 md:p-16">
-            <div className="mx-auto">
+            <div className="mx-auto md:min-w-[500px] w-full md:w-auto">
                 <h1 className="text-2xl md:text-4xl font-bold max-w-[700px]">
                     {guideData.title}
                 </h1>

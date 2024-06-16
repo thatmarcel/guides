@@ -65,7 +65,7 @@ export default function GuideStepTroubleshootingModal({
                     {stepData.troubleshootingSections.map((section, sectionIndex) => (
                         <TroubleshootingItemPane
                             title={section.title}
-                            key={sectionIndex}
+                            key={`guide-step-troubleshooting-modal-item-${sectionIndex}`}
                         >
                             {section.description}
                         </TroubleshootingItemPane>

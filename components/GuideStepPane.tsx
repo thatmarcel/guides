@@ -68,7 +68,7 @@ export default function GuideStepPane({
                     {stepData.buttons.length > 0
                         ? <div className="mt-6">
                             {stepData.buttons.map((buttonInfo, i) => (
-                                <Link href={buttonInfo.href} target="_blank" key={i}>
+                                <Link href={buttonInfo.href} target="_blank" key={`guide-step-pane-button-${i}`}>
                                     <MiscButton isAlternative={true}>
                                         {buttonInfo.title}
 

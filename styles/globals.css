@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.markdown-view code {
+.markdown-view code, .editor code {
     @apply bg-neutral-100;
     @apply py-[1px];
     @apply px-1;
@@ -10,28 +10,88 @@
     @apply rounded;
 }
 
-.markdown-view p {
-    @apply my-2
+.markdown-view p, .editor p {
+    @apply my-2;
 }
 
-.markdown-view ul {
+.markdown-view h1, .editor h1 {
+    @apply my-2 font-bold text-3xl;
+}
+
+.markdown-view h2, .editor h2 {
+    @apply my-2 font-bold text-2xl;
+}
+
+.markdown-view h3, .editor h3 {
+    @apply my-2 font-bold text-xl;
+}
+
+.markdown-view h4, .editor h4 {
+    @apply my-2 font-bold text-lg;
+}
+
+.markdown-view h5, .editor h5 {
+    @apply my-2 font-bold text-lg;
+}
+
+.markdown-view h6, .editor h6 {
+    @apply my-2 font-bold text-lg;
+}
+
+.markdown-view ul, .editor ul {
     @apply list-disc;
     @apply list-outside;
     @apply ml-8;
 }
 
-.markdown-view a {
+.markdown-view a, .editor a {
     @apply underline;
     @apply underline-offset-2;
     @apply decoration-[1px]
 }
 
-.dark .markdown-view code {
+.dark .markdown-view code, .dark .editor code {
     background-color: rgb(60 60 60);
 }
 
+.dark input, .dark .editor {
+    @apply bg-neutral-800;
+}
+
+input:focus, .editor:focus {
+    @apply outline-neutral-300;
+}
+
 @media (prefers-color-scheme: dark) {
-    .markdown-view code {
+    .markdown-view code, .editor code {
         background-color: rgb(60 60 60) !important;
     }
+
+    input:focus, .editor:focus {
+        @apply border-neutral-300;
+        outline: 0 !important;
+    }
+
+    input, .editor {
+        @apply bg-neutral-800;
+    }
+}
+
+.dark input:focus, .dark .editor:focus {
+    @apply border-neutral-300;
+    outline: 0 !important;
+}
+
+.editor {
+    @apply w-full border-[1px] rounded-lg shadow shadow-neutral-50 border-neutral-200 px-4 py-2 min-h-[200px];
+    @apply dark:shadow-neutral-950 dark:border-neutral-700 dark:border-[2px];
+}
+
+.uppy-Dashboard-inner {
+    background-color: transparent !important;
+    border-radius: 0.5rem !important;
+}
+
+.uppy-StatusBar-actionBtn--done {
+    display: none !important;
 }

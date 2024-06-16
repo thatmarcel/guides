@@ -2,6 +2,11 @@ import { NextResponse } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
+import {
+    clerkMiddleware,
+    createRouteMatcher
+} from "@clerk/nextjs/server";
+
 let locales = ["en", "de"];
 
 function getLocale(request) {
@@ -25,6 +30,14 @@ export function middleware(request) {
     request.nextUrl.pathname = `/${locale}${pathname}`;
     return NextResponse.redirect(request.nextUrl);
 }
+
+const isProtectedRoute = createRouteMatcher([
+    "/dash(.*)"
+]);
+
+export default clerkMiddleware((auth, req) => {
+    if (isProtectedRoute(req)) auth().protect();
+});
 
 export const config = {
     matcher: [
