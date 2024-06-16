@@ -1,7 +1,7 @@
 import {ReactNode} from "react";
 import MiscButton from "./MiscButton";
 import BackIcon from "../icons/BackIcon";
-import {UserButton} from "@clerk/nextjs";
+import DashboardTopBar from "./DashboardTopBar";
 
 export default function DashboardContainer({
     children,
@@ -16,11 +16,7 @@ export default function DashboardContainer({
 }) {
     return (
         <div className="w-screen h-full">
-            <div className="w-full pr-8 pt-6 h-16">
-                <div className="inline-block float-right">
-                    <UserButton />
-                </div>
-            </div>
+            <DashboardTopBar />
 
             <div className="w-full flex px-8 py-6 pt-4 pb-20">
                 <div className={`mx-auto max-w-[1000px] w-full ${shouldHaveBackButton ? "md:-mt-9" : ""}`}>
