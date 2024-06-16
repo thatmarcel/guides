@@ -128,7 +128,20 @@ export default function GuideEditor({
                 className="mt-4"
                 value={slug}
                 onTextChange={newValue => {
-                    setSlug(newValue);
+                    let newSlug = "";
+                    let previousCharacter = "";
+                    for (const character of newValue.toLowerCase().split("")) {
+                        if (allowedSlugCharacters.includes(character)) {
+                            newSlug += character;
+                            previousCharacter = character;
+                        } else {
+                            if (previousCharacter !== "-") {
+                                newSlug += "-";
+                                previousCharacter = "-";
+                            }
+                        }
+                    }
+                    setSlug(newSlug);
                     setChangedSlugManually(true);
                 }}
             />
@@ -160,7 +173,15 @@ export default function GuideEditor({
             />
 
             <MiscButton
-                isDisabled={isAddingOrEditingGuide || isDeletingGuide}
+                isDisabled={isAddingOrEditingGuide || isDeletingGuide || (
+                    title.split(" ").join("") === "" ||
+                    description.split(" ").join("") === "" ||
+                    slug.split(" ").join("") === "" ||
+                    steps.filter(s => (
+                        s.title.split(" ").join("") === "" ||
+                        s.description.split(" ").join("") === ""
+                    )).length > 0
+                )}
                 className="mt-8"
                 onClick={addOrEditGuide}
             >
