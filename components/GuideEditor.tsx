@@ -51,15 +51,15 @@ export default function GuideEditor({
             if (editedGuideData) {
                 await editOwnedGuide({
                     id: editedGuideData.id,
-                    title,
-                    description,
+                    title: title.trim(),
+                    description: description.trim(),
                     slug: slug.replace(/^-|-$/g, ""),
                     steps
                 });
             } else {
                 await addOwnedGuide({
-                    title,
-                    description,
+                    title: title.trim(),
+                    description: description.trim(),
                     slug: slug.replace(/^-|-$/g, ""),
                     steps
                 });

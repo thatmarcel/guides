@@ -11,10 +11,6 @@ type Params = {
     id: string
 }
 
-type Props = {
-    params: Params
-}
-
 export async function generateMetadata(
     _params: any,
     _parent: ResolvingMetadata
