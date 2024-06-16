@@ -22,7 +22,7 @@ export default function GuideStepPane({
     return (
         <div className="w-full h-full">
             <div className="pt-4 px-5">
-                <Link href={`/guides/${guideData.slug}`}>
+                <Link href={`/g/${guideData.slug}`}>
                     <h2 className="
                         text-md
                         md:text-lg

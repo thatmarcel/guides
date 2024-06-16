@@ -11,6 +11,11 @@ const nextConfig = {
                 destination: "/dash",
                 permanent: false
             },
+            {
+                source: "/guide/:slug",
+                destination: "/g/:slug",
+                permanent: false
+            },
         ]
     }
 };

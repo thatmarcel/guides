@@ -25,7 +25,7 @@ export default function GuideLandingPane({
                 <p className="mt-6 text-md md:text-md max-w-[700px] md:leading-6">
                     {guideData.description}
                 </p>
-                <Link href={`/guides/${guideData.slug}/steps/1`}>
+                <Link href={`/g/${guideData.slug}/steps/1`}>
                     <MiscButton className="mt-10">
                         {localize("startGuideButtonTitle", language)}
                     </MiscButton>

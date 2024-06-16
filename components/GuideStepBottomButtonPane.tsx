@@ -24,7 +24,7 @@ export default function GuideStepBottomButtonPane({
     return (
         <div className="mt-8 md:mt-9 w-full">
             {guideData.steps.length > (stepIndex + 1)
-                ? <Link href={`/guides/${guideData.slug}/steps/${stepIndex + 2}`}>
+                ? <Link href={`/g/${guideData.slug}/steps/${stepIndex + 2}`}>
                     <MiscButton className="max-sm:w-full mb-2 md:mb-0 mr-6 md:mr-10">
                         {localize("nextGuideStepButtonTitle", language)}
                     </MiscButton>

@@ -149,7 +149,7 @@ export default function GuideEditor({
             {slug.split(" ").join("") !== ""
                 ? <p className="mt-3">
                     The guide will be hosted at <span className="font-medium">
-                        https://guides.cx/guide/{slug.replace(/^-|-$/g, "")}
+                        https://guides.cx/g/{slug.replace(/^-|-$/g, "")}
                     </span>
                 </p>
                 : null
