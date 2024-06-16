@@ -11,8 +11,8 @@ export default function DashboardTopBar() {
         <div className="w-full pr-8 pt-6 h-16">
             <div className="inline-block float-right">
                 <UserButton
-                    afterSignOutUrl="/"
-                    afterMultiSessionSingleSignOutUrl="/"
+                    afterSignOutUrl="https://accounts.guides.cx/sign-in"
+                    afterMultiSessionSingleSignOutUrl="https://accounts.guides.cx/sign-in"
                     appearance={{
                         baseTheme: isDarkMode ? dark : experimental__simple
                     }}
