@@ -52,9 +52,56 @@ export default function GuideStepEditor({
                 }}
             />
 
+            <InputField
+                title="Additional button title (optional)"
+                placeholder="Download program"
+                type="text"
+                className="mt-4"
+                value={stepData.buttons.length > 0 ? stepData.buttons[0].title : ""}
+                hasError={stepData.buttons.length > 0 && stepData.buttons[0].title.trim() === ""}
+                onTextChange={newValue => {
+                    if (stepData.buttons.length < 1) {
+                        stepData.buttons.push({ title: newValue, href: "" });
+                    } else {
+                        stepData.buttons[0].title = newValue;
+
+                        if (stepData.buttons[0].title === "" && stepData.buttons[0].href === "") {
+                            stepData.buttons = [];
+                        }
+                    }
+
+                    onStepDataChange(stepData);
+                }}
+            />
+
+            <InputField
+                title="Additional button link (optional)"
+                placeholder="https://google.com"
+                type="url"
+                className="mt-4"
+                value={stepData.buttons.length > 0 ? stepData.buttons[0].href : ""}
+                hasError={stepData.buttons.length > 0 && (
+                    stepData.buttons[0].href.trim() === "" ||
+                    (!stepData.buttons[0].href.startsWith("https://") && !stepData.buttons[0].href.startsWith("http://"))
+                )}
+                onTextChange={newValue => {
+                    if (stepData.buttons.length < 1) {
+                        stepData.buttons.push({ title: "", href: newValue });
+                    } else {
+                        stepData.buttons[0].href = newValue;
+
+                        if (stepData.buttons[0].title === "" && stepData.buttons[0].href === "") {
+                            stepData.buttons = [];
+                        }
+                    }
+
+                    onStepDataChange(stepData);
+                }}
+            />
+
             {stepIndex > 0
                 ? <MiscButton
-                    className="mt-4 text-red-500 border-red-500 dark:border-red-500 w-full sm:w-auto"
+                    className="mt-5 text-red-500 border-red-500 dark:border-red-500 w-full sm:w-auto"
                     onClick={onStepDeletion}
                 >
                     Delete step

@@ -48,20 +48,29 @@ export default function GuideEditor({
         setAddingOrEditingGuide(true);
 
         try {
+            const mappedSteps = steps.map(s => {
+                s.buttons = s.buttons.filter(b => (
+                    b.title.trim() !== "" &&
+                    b.href.trim() !== ""
+                ));
+
+                return s;
+            });
+
             if (editedGuideData) {
                 await editOwnedGuide({
                     id: editedGuideData.id,
                     title: title.trim(),
                     description: description.trim(),
                     slug: slug.replace(/^-|-$/g, ""),
-                    steps
+                    steps: mappedSteps
                 });
             } else {
                 await addOwnedGuide({
                     title: title.trim(),
                     description: description.trim(),
                     slug: slug.replace(/^-|-$/g, ""),
-                    steps
+                    steps: mappedSteps
                 });
             }
 
