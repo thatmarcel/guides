@@ -53,14 +53,14 @@ export default function GuideEditor({
                     id: editedGuideData.id,
                     title,
                     description,
-                    slug,
+                    slug: slug.replace(/^-|-$/g, ""),
                     steps
                 });
             } else {
                 await addOwnedGuide({
                     title,
                     description,
-                    slug,
+                    slug: slug.replace(/^-|-$/g, ""),
                     steps
                 });
             }
@@ -145,6 +145,15 @@ export default function GuideEditor({
                     setChangedSlugManually(true);
                 }}
             />
+
+            {slug.split(" ").join("") !== ""
+                ? <p className="mt-3">
+                    The guide will be hosted at <span className="font-medium">
+                        https://guides.cx/guide/{slug.replace(/^-|-$/g, "")}
+                    </span>
+                </p>
+                : null
+            }
 
             <GuideEditorStepSelection
                 className="mt-12 pb-2"
