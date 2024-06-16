@@ -6,6 +6,7 @@ import GuideData from "../../../types/guide_data";
 import {notFound} from "next/navigation";
 import {Metadata, ResolvingMetadata} from "next";
 import {getLocale} from "next-intl/server";
+import CreateGuideBottomPromo from "../../../components/CreateGuideBottomPromo";
 
 type Params = {
     slug: string
@@ -53,6 +54,10 @@ export default async function GuideViewPage({
         <div className="h-screen w-full">
             <GuideLandingPane
                 guideData={guideData}
+                language={languageCode}
+            />
+
+            <CreateGuideBottomPromo
                 language={languageCode}
             />
         </div>
