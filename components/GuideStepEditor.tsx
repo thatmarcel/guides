@@ -101,7 +101,7 @@ export default function GuideStepEditor({
 
             {stepIndex > 0
                 ? <MiscButton
-                    className="mt-5 text-red-500 border-red-500 dark:border-red-500 w-full sm:w-auto"
+                    className="mt-5 text-red-500 border-red-500 enabled:dark:border-red-500 w-full sm:w-auto"
                     onClick={onStepDeletion}
                 >
                     Delete step

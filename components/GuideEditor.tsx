@@ -200,7 +200,7 @@ export default function GuideEditor({
                         s.description.split(" ").join("") === ""
                     )).length > 0
                 )}
-                className="mt-8"
+                className="mt-8 w-full md:w-auto"
                 onClick={addOrEditGuide}
             >
                 {editedGuideData
@@ -213,7 +213,7 @@ export default function GuideEditor({
                 ? <MiscButton
                     isDisabled={isAddingOrEditingGuide || isDeletingGuide}
                     isGhost={true}
-                    className="text-red-500 ml-2"
+                    className="text-red-500 ml-0 mt:ml-2 w-full md:w-auto mt-2 md:mt-0"
                     onClick={deleteGuide}
                 >
                     Delete guide now
