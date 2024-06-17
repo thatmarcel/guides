@@ -16,6 +16,11 @@ const nextConfig = {
                 destination: "/g/:slug",
                 permanent: false
             },
+            {
+                source: "/guides/:slug",
+                destination: "/g/:slug",
+                permanent: false
+            }
         ]
     }
 };
