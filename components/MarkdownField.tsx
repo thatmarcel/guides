@@ -57,6 +57,7 @@ export default function MarkdownField({
                 {title} (supports <a
                     className="underline underline-offset-2"
                     href="https://www.markdownguide.org/cheat-sheet/#basic-syntax"
+                    target="_blank"
                 >
                     Markdown
                 </a>)
