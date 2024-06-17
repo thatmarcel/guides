@@ -54,7 +54,12 @@ export default function MarkdownField({
             <p
                 className="text-lg font-medium pb-1"
             >
-                {title}
+                {title} (supports <a
+                    className="underline underline-offset-2"
+                    href="https://www.markdownguide.org/cheat-sheet/#basic-syntax"
+                >
+                    Markdown
+                </a>)
             </p>
 
             <MilkdownProvider>
