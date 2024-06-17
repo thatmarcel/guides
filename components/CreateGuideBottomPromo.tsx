@@ -5,7 +5,7 @@ import localize from "../helpers/localize";
 
 export default function CreateGuideBottomPromo({ language }: { language: string }) {
     return (
-        <div className="block flex items-center absolute bottom-0 left-0 right-0 pb-4 bg-white black:bg-gray-900">
+        <div className="block flex items-center absolute bottom-0 left-0 right-0 pb-4 bg-white dark:bg-neutral-900">
             <Link href="/dash" target="_blank" className="mx-auto">
                 <MiscButton isGhost={true}>
                     {localize("createGuidePromoButtonTitle", language)}
