@@ -48,10 +48,21 @@
     @apply ml-8;
 }
 
+.markdown-view ol, .editor ol {
+    @apply list-decimal;
+    @apply list-outside;
+    @apply ml-8;
+}
+
 .markdown-view a, .editor a {
     @apply underline;
     @apply underline-offset-2;
     @apply decoration-[1px]
+}
+
+.markdown-view blockquote, .editor blockquote {
+    @apply border-l-2 border-neutral-500;
+    @apply pl-2;
 }
 
 .dark .markdown-view code, .dark .editor code {
