@@ -49,7 +49,7 @@ export default function MarkdownField({
     className?: string,
     onMarkdownUpdated: (markdown: string) => void
 }) {
-    const [isMarkdownPreviewActive, setMarkdownPreviewActive] = useState(true);
+    const [isMarkdownPreviewActive, setMarkdownPreviewActive] = useState(false);
 
     return (
         <div className={className}>
