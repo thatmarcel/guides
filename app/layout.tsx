@@ -7,6 +7,7 @@ import "@fontsource-variable/public-sans";
 import "../styles/globals.css";
 import {getLocale} from "next-intl/server";
 import {Metadata, ResolvingMetadata} from "next";
+import NextTopLoader from "nextjs-toploader";
 
 export async function generateMetadata(
     _params: any,
@@ -29,6 +30,8 @@ export default async function RootLayout({
     return (
         <html lang={languageCode}>
             <body className="dark:bg-neutral-900 dark:text-white overflow-x-hidden">
+                <NextTopLoader color="#000000" showSpinner={false} />
+
                 {children}
             </body>
         </html>
